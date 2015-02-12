@@ -2,7 +2,7 @@ package com.suckoo.cuckoo.weather.model;
 
 public class User {
 	public final static String KEY_ID =  "id";
-	public final static String KEY_NAME = "name";
+	public final static String KEY_NAME = "username";
     public final static String KEY_PASSWORD = "password";
     public final static String KEY_EMAIL = "email";
     public final static String KEY_NICKNAME = "nickname";

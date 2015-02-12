@@ -28,7 +28,7 @@ public class HttpRequestHelper {
 
         for(String key : paramsMap.keySet()) {
         	String value = paramsMap.get(key);
-        	params.add(key, value);
+        	params.put(key, value);
         }
            
         client.post(url, params, responseHandler);

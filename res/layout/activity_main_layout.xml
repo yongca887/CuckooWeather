@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/ui_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+    </FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RadioButton
+                        android:id="@+id/bottom_tabbar_rb_1"
+            
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/tabbg_drawable"
+            android:button="@color/transparent"
+            android:gravity="center"
+            android:text="@string/weather"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <RadioButton
+                        android:id="@+id/bottom_tabbar_rb_2"
+            
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/tabbg_drawable"
+            android:button="@color/transparent"
+            android:gravity="center"
+            android:text="@string/lifeindex"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <RadioButton
+                        android:id="@+id/bottom_tabbar_rb_3"
+            
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/tabbg_drawable"
+            android:button="@color/transparent"
+            android:gravity="center"
+            android:text="@string/me"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RadioGroup>
+
+</LinearLayout>

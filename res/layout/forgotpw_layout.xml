@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <FrameLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#c6c6ce">
+
+        <Button
+            android:id="@+id/backfromforgot"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:background="@color/transparent" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="重置密码"
+            android:textSize="25dp"
+            android:layout_gravity="center"
+           />
+
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/newpw"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:hint="请输入新的密码"
+        android:gravity="center"
+        android:inputType="textPassword" >
+    </EditText>
+        <EditText
+        android:id="@+id/newpw2"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:hint="重新输入密码"
+        android:gravity="center"
+        android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/okfromforgot"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="确认" />
+
+</LinearLayout>

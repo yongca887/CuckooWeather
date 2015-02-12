@@ -7,4 +7,6 @@
     <string name="forgot_password">忘记密码?</string>
     <string name="search">搜索</string>
     <string name="weather">天气</string>
+    <string name="lifeindex">生活</string>
+    <string name="me">我</string>
 </resources>

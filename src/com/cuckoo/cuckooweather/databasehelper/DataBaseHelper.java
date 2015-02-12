@@ -14,9 +14,10 @@ import android.util.Log;
 public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "database.db";
     public static final String USER_TABLE = "usertable";
+//    public static final String WEATHER_TABLE = "weathertable";
 
     private static final int DATABASE_VERSION = 1;
-
+    //用户表
     private static final String CREATE_USERTABLE_SQL = "create table " + USER_TABLE + "(" + User.KEY_ID +
             " integer primary key autoincrement," +
             User.KEY_NAME+" text," +
@@ -24,7 +25,16 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             User.KEY_NICKNAME+" text," +
             User.KEY_AVATAR+" byte," +
             User.KEY_EMAIL+" text" + ");";
-
+    
+    //天气表
+//    private static final String CREATE_WEATHER_SQL = "create table " + WEATHER_TABLE + "(" + User.KEY_ID +
+//            " integer primary key autoincrement," +
+//            User.KEY_NAME+" text," +
+//            User.KEY_PASSWORD+" text," +
+//            User.KEY_NICKNAME+" text," +
+//            User.KEY_AVATAR+" byte," +
+//            User.KEY_EMAIL+" text" + ");";
+    
     private SQLiteDatabase db;
     private String createTableSqlString;
 

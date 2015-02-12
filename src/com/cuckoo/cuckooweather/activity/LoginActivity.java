@@ -1,7 +1,13 @@
 package com.cuckoo.cuckooweather.activity;
 
+import org.apache.http.Header;
+import org.json.JSONObject;
+
 import com.cuckoo.cuckooweather.R;
 import com.cuckoo.cuckooweather.network.UserManagerHandle;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 import com.suckoo.cuckoo.weather.model.User;
 
 import android.app.Activity;
@@ -40,26 +46,41 @@ public class LoginActivity extends Activity {
                 if (username.equals("") || (password.equals(""))) {
                     display("用户名或者密码不能为空");
                 } else {
+                    
                     //登录验证
                 	UserManagerHandle userManagerHandle = new UserManagerHandle();
                 	User user = new User();
                 	user.setUsername(username);
                 	user.setPassword(password);
-                	//执行登录
-//                	if (userManagerHandle.login(user)) {
-//						//登录成功
-//					} else {
-//						display("登录失败，请检查账户和密码是否填写错误！");
-//					}
-                	                	
-//                    UserDao userDao = new UserDao(LoginActivity.this);
-//                    if (userDao.verify(new User(username, password))) {
-//                        Intent intent = new Intent();
-//                        intent.setClass(LoginActivity.this, MainActivity.class);
-//                        startActivity(intent);
-//                    } else {
-//                        display("登录失败，请检查账户和密码是否填写错误！");
-//                    }
+                	
+                	userManagerHandle.login(user, new JsonHttpResponseHandler() {
+
+						@Override
+						public void onFailure(int statusCode, Header[] headers,
+								Throwable throwable, JSONObject errorResponse) {
+							// TODO Auto-generated method stub
+							super.onFailure(statusCode, headers, throwable, errorResponse);
+							
+							display("登录失败，请检查账户和密码是否填写错误！");
+							
+							display("error:" + errorResponse.toString() + "error status:" + statusCode);
+						}
+
+						@Override
+						public void onSuccess(int statusCode, Header[] headers,
+								JSONObject response) {
+							// TODO Auto-generated method stub
+							super.onSuccess(statusCode, headers, response);
+							
+							Intent intent = new Intent();
+	                        intent.setClass(LoginActivity.this, MainActivity.class);
+	                        startActivity(intent);
+							
+	                        display("登录成功");
+//							display("status:" + statusCode + " response: " + response.toString());
+//							System.out.println("status:" + statusCode + " response: " + response.toString());
+						}
+                	});
                 }
             }
         });
